@@ -28,6 +28,18 @@
     </mat-form-field>
 
     <mat-form-field>
+      <input
+        type="number"
+        min="2011"
+        required
+        matInput
+        placeholder="Year"
+        autocomplete="off"
+        [(ngModel)]="form.publicationYear"
+        name="publicationYear"
+      />
+    </mat-form-field>
+    <mat-form-field>
       <mat-chip-list #chipList>
         <mat-chip
           *ngFor="let name of form.authors"

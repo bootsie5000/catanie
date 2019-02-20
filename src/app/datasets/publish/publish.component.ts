@@ -19,6 +19,7 @@ import { PublishedData } from "../../shared/sdk/models";
 export class PublishComponent implements OnInit {
   public separatorKeysCodes: number[] = [ENTER, COMMA];
 
+  public  currentYear: number = (new Date()).getFullYear();
   private datasets$ = this.store.pipe(select(getDatasetsInBatch));
   public datasetCount$ = this.datasets$.pipe(map(datasets => datasets.length));
 
@@ -32,7 +33,7 @@ export class PublishComponent implements OnInit {
     description: "",
     abstract: "",
     pidArray: [],
-    publicationYear: null,
+    publicationYear: this.currentYear,
     url: "",
     dataDescription: "",
     thumbnail: "",
@@ -44,7 +45,8 @@ export class PublishComponent implements OnInit {
     private store: Store<any>,
     @Inject(APP_CONFIG) private appConfig,
     private publishedDataApi: PublishedDataApi
-  ) {}
+  ) {
+  }
 
   public ngOnInit() {
     this.store.dispatch(new PrefillBatchAction());

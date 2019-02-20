@@ -42,7 +42,7 @@ describe("SearchIDCompleteAction", () => {
 });
 
 describe("DatablocksAction", () => {
-  it("should create an action", () => {
+  it("should create an action in datablocks", () => {
     const id = "idstring";
     const action = new DatablocksAction(id);
     expect({ ...action }).toEqual({ type: DATABLOCKS, id });
