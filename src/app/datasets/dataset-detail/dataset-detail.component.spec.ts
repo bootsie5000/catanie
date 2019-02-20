@@ -6,7 +6,7 @@ import { DatasetDetailComponent } from "./dataset-detail.component";
 import { FileSizePipe } from "../../shared/pipes/filesize.pipe";
 import { LinkyPipe } from "ngx-linky";
 import { MatTableModule } from "@angular/material";
-import { MockActivatedRoute, MockStore } from "shared/MockStubs";
+import { MockActivatedRoute, MockStore, MockHttp } from "shared/MockStubs";
 import { MockRouter } from "shared/MockStubs";
 import { Router } from "@angular/router";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { Store, StoreModule } from "@ngrx/store";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { rootReducer } from "state-management/reducers/root.reducer";
+import {  HttpClient } from "@angular/common/http";
+import { SocketConnection } from "shared/sdk/sockets/socket.connections";
+import { SDKModels } from "shared/sdk";
 
 describe("DatasetDetailComponent", () => {
   let component: DatasetDetailComponent;
@@ -50,6 +53,9 @@ describe("DatasetDetailComponent", () => {
             }
           },
           { provide: ActivatedRoute, useClass: MockActivatedRoute },
+          { provide: HttpClient, useClass: MockHttp},
+          { provide: SocketConnection  },
+          { provide: SDKModels  },
           { provide: Store, useClass: MockStore }
         ]
       }

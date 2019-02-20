@@ -28,8 +28,7 @@ export class ConfigFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private configService: ConfigService,
-    private store: Store<any>
+    private configService: ConfigService
   ) {}
 
   ngOnInit() {

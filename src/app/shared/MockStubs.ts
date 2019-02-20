@@ -220,7 +220,7 @@ export class MockStore {
   }
 
   public pipe(obj) {
-    return of(null);
+    return of([]);
   }
 }
 

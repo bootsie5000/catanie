@@ -38,8 +38,7 @@ describe("ConfigFormComponent", () => {
       ],
       declarations: [ConfigFormComponent, ObjKeysPipe, TitleCasePipe],
       providers: [
-        { provide: ConfigService, useClass: MockConfigService },
-        { provide: Store, useClass: MockStore }
+        { provide: ConfigService, useClass: MockConfigService }
       ]
     }).compileComponents();
   }));
