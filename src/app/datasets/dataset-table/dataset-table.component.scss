@@ -93,7 +93,7 @@
 mat-header-cell {
   color: white;
   background: mat-color($primary);
-  justify-content: center;
+  justify-content: left;
 }
 
 mat-header-row {
@@ -122,4 +122,8 @@ i {
 
 ::ng-deep mat-header-cell .mat-checkbox-frame {
   border-color: white;
+}
+
+mwlResizable {
+  box-sizing: border-box; // required for the enableGhostResize option to work
 }

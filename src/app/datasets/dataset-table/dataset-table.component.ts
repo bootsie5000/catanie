@@ -5,6 +5,7 @@ import { Dataset, MessageType, ArchViewMode } from "state-management/models";
 import { DialogComponent } from "shared/modules/dialog/dialog.component";
 import { MatCheckboxChange, MatDialog } from "@angular/material";
 import { Router } from "@angular/router";
+import { ResizeEvent } from 'angular-resizable-element';
 import { ShowMessageAction } from "state-management/actions/user.actions";
 import { Subscription } from "rxjs";
 import {
@@ -92,6 +93,7 @@ export class DatasetTableComponent implements OnInit, OnDestroy {
   private defaultColumns: string[];
   public visibleColumns: string[];
   columns$ = this.store.pipe(select(getDisplayedColumns));
+  public columnSize: string;
 
   constructor(
     private router: Router,
@@ -151,6 +153,11 @@ export class DatasetTableComponent implements OnInit, OnDestroy {
 
   onExportClick(): void {
     this.store.dispatch(new ExportToCsvAction());
+  }
+
+  onResizeEnd(event: ResizeEvent): void {
+    this.columnSize = event.rectangle.width + "px";
+    console.log('Element was resized', this.columnSize);
   }
 
   /**

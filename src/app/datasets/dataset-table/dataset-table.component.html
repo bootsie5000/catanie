@@ -112,7 +112,12 @@
     </ng-container>
 
     <ng-container matColumnDef="datasetName" style="align-content: center">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>
+      <mat-header-cell *matHeaderCellDef mat-sort-header mwlResizable
+      [enableGhostResize]="true"
+      [resizeEdges]="{right: true, left: true}"
+      (resizeEnd)="onResizeEnd($event)"
+      [style.flex]="columnSize"
+      >
         <div fxLayout="column" style="align-items: center">
           <div>
             <i class="material-icons" >fingerprint</i>
@@ -120,7 +125,7 @@
           <div class="table_column">Name</div>
         </div>
       </mat-header-cell>
-      <mat-cell class="datasetName" *matCellDef="let dataset"> {{ dataset.datasetName }} </mat-cell>
+      <mat-cell class="datasetName" *matCellDef="let dataset" [style.flex]="columnSize"> {{ dataset.datasetName }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="sourceFolder">

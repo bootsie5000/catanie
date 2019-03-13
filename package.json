@@ -34,6 +34,7 @@
     "@ngrx/router-store": "^7.3.0",
     "@ngrx/store": "^7.3.0",
     "@ngui/datetime-picker": "^0.16.2",
+    "angular-resizable-element": "^3.2.4",
     "angular5-csv": "^0.2.11",
     "autolinker": "^3.0.4",
     "core-js": "^2.6.5",
