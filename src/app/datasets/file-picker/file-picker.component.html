@@ -5,6 +5,6 @@
   <span>{{status}}</span>
 
 
-  <button class="attach-button" type="button" mat-button [ngxFilePicker]="readMode" multiple accept="image/*" (readStart)="onReadStart($event)" (filePick)="onFilePicked($event)"
+  <button class="attach-button" type="button" mat-button ngxFilePicker="readMode" multiple accept="image/*" (readStart)="onReadStart($event)" (filePick)="onFilePicked($event)"
     (readEnd)="onReadEnd($event)">Browse</button>
 </div>
