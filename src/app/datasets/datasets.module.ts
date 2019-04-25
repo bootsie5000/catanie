@@ -5,7 +5,7 @@ import { BatchCardComponent } from "./batch-card/batch-card.component";
 import { BatchViewComponent } from "./batch-view/batch-view.component";
 import { CommonModule } from "@angular/common";
 import { FileDropzoneComponent } from "./file-dropzone/file-dropzone.component";
-import { FileHelpersModule } from "ngx-file-helpers";
+import { NgxFileHelpersModule } from "ngx-file-helpers";
 import { FilePickerComponent } from "./file-picker/file-picker.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
@@ -63,7 +63,7 @@ import { ColumnSelectorComponent } from "./column-selector/column-selector.compo
   imports: [
     AppConfigModule,
     CommonModule,
-    FileHelpersModule,
+    NgxFileHelpersModule,
     FlexLayoutModule,
     FontAwesomeModule,
     FormsModule,
