@@ -48,7 +48,7 @@
     "ngx-json-viewer": "^2.4.0",
     "ngx-linky": "^2.1.0",
     "rison": "github:nanonid/rison",
-    "rxjs": "6.9.0",
+    "rxjs": "6.4.0",
     "saturn-datepicker": "^7.2.0",
     "shortid": "^2.2.14",
     "socket.io-client": "^2.2.0",
